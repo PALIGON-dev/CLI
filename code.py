@@ -20,6 +20,24 @@ class Config:
             return f'"{value}"'
         return str(value)
 
+    def _process_dict(self, data, indent=0):
+        if not isinstance(data, dict):
+            raise ValueError("Element is wrong")
+
+        result = []
+        for key, value in data.items():
+            if not re.match(r'^[_a-zA-Z]+$', key):
+                raise ValueError(f"Invalid key : {key}")
+
+            if isinstance(value, (int, float, str)):
+                result.append(f"{' ' * indent}{key} = {self._process_value(value)}")
+            elif isinstance(value, dict):
+                result.append(f"{' ' * indent}{key} = {{")
+                result.append(self._process_dict(value, indent + 2))
+                result.append(f"{' ' * indent}}}")
+            else:
+                raise ValueError(f"Unsupported value type {key}: {type(value)}")
+        return "\n".join(result)
 
 def main():
     if len(sys.argv) < 2:
@@ -27,3 +45,21 @@ def main():
         sys.exit(1)
 
     input_file = sys.argv[1]
+
+    try:
+        with open(input_file, 'r', encoding='utf-8') as file:
+            json_data = json.load(file)
+    except Exception as e:
+        print(f"Error reading JSON file: {e}")
+        sys.exit(1)
+
+    try:
+        translator = Config(json_data)
+        result = translator.translate()
+        print(result)
+    except Exception as e:
+        print(f"Translation error: {e}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
