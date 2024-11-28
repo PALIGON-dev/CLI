@@ -48,3 +48,10 @@ $(имя)
 Покроем все вышеописанные функции тестами, как того требует условие задания. Результаты тестирования и сами тесты описаны ниже  
 ![image](https://github.com/user-attachments/assets/feb2d3fb-f3a9-4de7-a1f8-e30ee950227d)
 ![image](https://github.com/user-attachments/assets/5d7345b6-a22b-432f-a56e-593904b6da3c)
+![image](https://github.com/user-attachments/assets/d6339b0c-fd53-4e0c-a1a7-4ba2386f711d)
+![image](https://github.com/user-attachments/assets/2c36ac85-debe-4b3c-9be6-b1a027dedc1d)
+![image](https://github.com/user-attachments/assets/745fe2b3-c5f1-45d4-8114-d9c895f31336)
+![image](https://github.com/user-attachments/assets/17cb655b-cb34-4fc8-b8a9-293157710c65)
+![image](https://github.com/user-attachments/assets/f0e69b13-9669-478e-9f8c-42ee8a3b055a)
+![image](https://github.com/user-attachments/assets/f3bc1cb0-8b3e-4225-8d7c-35311e49fb79)
+
